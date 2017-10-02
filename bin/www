@@ -99,5 +99,17 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.info(`Listening on ${port} port.`);
 }
+
+  let gcInterval;
+  function init() {
+    gcInterval = setInterval(() => { gcDo(); }, 60000);
+  }
+  function gcDo() {
+    global.gc();
+    clearInterval(gcInterval);
+    init();
+  }
+  init();
 }
