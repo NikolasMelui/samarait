@@ -35,7 +35,7 @@ const app = express();
   // app.use ROUTES
   app.use('/', index);
 
-  // Use sessionStore for saving client session 
+  // Use sessionStore for saving client session
   const sessionStore = require('./libs/sessionStore');
   app.use(session({
     secret: myconfig.session.secret,
@@ -43,6 +43,13 @@ const app = express();
     cookie: myconfig.session.cookie,
     store: sessionStore
   }));
+
+  /*
+  I think here must be some custome commonMiddleware,
+  but i don't know how can i build it. So i put it here.
+
+  app.use(common.commonMiddleware);
+  */
 
   // catch 404 error, forward to error handler
   app.use(function(req, res, next) {
