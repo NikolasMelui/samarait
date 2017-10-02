@@ -4,7 +4,6 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const cluster = require('cluster');
 
 /*
 For using production environment:
@@ -29,12 +28,14 @@ const app = express();
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
+  // Folder for files routes
+  app.use('/files', express.static('../files'));
 
   app.use('/', index);
 
   // catch 404 error, forward to error handler
   app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    const err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
