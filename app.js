@@ -9,6 +9,15 @@ var index = require('./routes/index');
 
 var app = express();
 
+
+/*
+For using production environment:
+process.env.NODE_ENV='production';
+
+For working with Garbage Collector use this flags:
+--nouse-idle-notification --expose-gc
+*/
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
