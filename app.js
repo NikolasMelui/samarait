@@ -28,10 +28,21 @@ const app = express();
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
+
   // Folder for files routes
   app.use('/files', express.static('../files'));
 
+  // app.use ROUTES
   app.use('/', index);
+
+  // Use sessionStore for saving client session 
+  const sessionStore = require('./libs/sessionStore');
+  app.use(session({
+    secret: myconfig.session.secret,
+    key: myconfig.session.key,
+    cookie: myconfig.session.cookie,
+    store: sessionStore
+  }));
 
   // catch 404 error, forward to error handler
   app.use(function(req, res, next) {
