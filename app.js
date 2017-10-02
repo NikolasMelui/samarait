@@ -36,13 +36,13 @@ const app = express();
   app.use('/', index);
 
   // Use sessionStore for saving client session
-  const sessionStore = require('./libs/sessionStore');
-  app.use(session({
-    secret: myconfig.session.secret,
-    key: myconfig.session.key,
-    cookie: myconfig.session.cookie,
-    store: sessionStore
-  }));
+  // const sessionStore = require('./libs/sessionStore');
+  // app.use(session({
+  //   secret: myconfig.session.secret,
+  //   key: myconfig.session.key,
+  //   cookie: myconfig.session.cookie,
+  //   store: sessionStore
+  // }));
 
   /*
   I think here must be some custome commonMiddleware,
