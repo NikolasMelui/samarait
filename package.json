@@ -1,13 +1,15 @@
 {
-  "name": "ejs",
-  "version": "0.0.0",
+  "name": "samarait",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "cross-env NODE_ENV=development node --nouse-idle-notification --expose-gc ./bin/www",
+    "pro": "cross-env NODE_ENV=production node --nouse-idle-notification --expose-gc ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "cross-env": "^5.0.5",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.15.5",
