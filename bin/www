@@ -4,10 +4,22 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('ejs:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('ejs:server');
+const http = require('http');
+const cluster = require('cluster');
 
+if(cluster.isMaster) {
+  let cpuCount = require('os').cpus().length;
+  for(let i=0; i<cpuCount; i++) {
+    cluster.schedulingPolicy = cluster.SCHED_NONE;
+    cluster.fork();
+  }
+  cluster.on('exit', function(worker) {
+    console.log('Worker' + worker.id + ' died :(');
+    cluster.fork();
+  });
+} else {
 /**
  * Get port from environment and store in Express.
  */
@@ -87,4 +99,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+}
 }
