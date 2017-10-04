@@ -2,7 +2,7 @@
 
 /**
  * Module dependencies.
- */
+**/
 
 const app = require('../app');
 const debug = require('debug')('ejs:server');
@@ -24,7 +24,7 @@ if(cluster.isMaster) {
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT);
 app.set('port', port);
 
 /**
