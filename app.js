@@ -1,9 +1,9 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+const express = require('express'),
+      path = require('path'),
+      favicon = require('serve-favicon'),
+      logger = require('morgan'),
+      cookieParser = require('cookie-parser'),
+      bodyParser = require('body-parser');
 
 /*
 For using production environment:
@@ -14,7 +14,8 @@ For working with Garbage Collector use this flags:
 */
 
 // ROUTES
-const index = require('./routes/index');
+const index = require('./routes/index'),
+      about = require('./routes/about');
 
 const app = express();
 
@@ -34,6 +35,7 @@ const app = express();
 
   // app.use ROUTES
   app.use('/', index);
+  app.use('/about', about);
 
   // Use sessionStore for saving client session
   // const sessionStore = require('./libs/sessionStore');
@@ -52,14 +54,14 @@ const app = express();
   */
 
   // catch 404 error, forward to error handler
-  app.use(function(req, res, next) {
+  app.use((req, res, next) => {
     const err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
   // error handler
-  app.use(function(err, req, res, next) {
+  app.use((err, req, res, next) => {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
