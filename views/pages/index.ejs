@@ -1,0 +1,112 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script> <!--TODO: ну это пздц)) -->
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="pushable" style="" cz-shortcut-listen="true">
+  <% include ../partials/alternative_menus %>
+  <div class="pusher">
+    
+    <!--BLACK_BLOCK-->
+    <div class="ui inverted vertical masthead center aligned segment">
+  
+      <!--HEADER-->
+      <% include ../partials/header %>
+      
+      <!--MAIN_BLACK_BLOCK-->
+      <div class="ui text container">
+        <h1 class="ui inverted header">
+         <%=title %> 
+        </h1>
+        <h2>Первые парни на деревне</h2>
+        <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
+      </div>
+    
+    </div>
+    <!--BLACK_BLOCK END--> 
+    
+        
+    <div class="ui vertical stripe segment">
+      <div class="ui middle aligned stackable grid container">
+        <div class="row">
+          <div class="eight wide column">
+            <h3 class="ui header">Что такое Samara IT Community?</h3>
+            <p>Сообщество Самарских IT компаний и университетов создаёт всё больше и больше людей, которым интересны современные технологии. Мы стараемся агрегировать все события в IT сфере, чтобы Вам было интересно развиваться, общаться и дружить. Мы не просто сообщество, мы - семья.</p>
+            <!--<h3 class="ui header">We Make Bananas That Can Dance</h3>-->
+            <!--<p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>-->
+          </div>
+          <div class="six wide right floated column">
+            <img src="https://pp.userapi.com/c841020/v841020692/1755f/TcdhyYF77Ww.jpg" class="ui large image">
+          </div>
+        </div>
+        <!--<div class="row">-->
+        <!--  <div class="center aligned column">-->
+        <!--    <a class="ui huge button">Подробнее</a>-->
+        <!--  </div>-->
+        <!--</div>-->
+      </div>
+    </div>
+    
+    <div class="ui vertical stripe quote segment">
+      <div class="ui equal width stackable internally celled grid">
+        <div class="center aligned row">
+          <div class="column">
+            <h3>Мы в социальных сетях</h3>
+            <button class="ui facebook button">
+              <i class="facebook icon"></i>
+              Facebook
+            </button>
+            <button class="ui twitter button">
+              <i class="twitter icon"></i>
+              Twitter
+            </button>
+            <button class="ui google plus button">
+              <i class="google plus icon"></i>
+              Google Plus
+            </button>
+            <button class="ui vk button">
+              <i class="vk icon"></i>
+              VK
+            </button>
+            <button class="ui linkedin button">
+              <i class="linkedin icon"></i>
+              LinkedIn
+            </button>
+            <button class="ui instagram button">
+              <i class="instagram icon"></i>
+              Instagram
+            </button>
+            <button class="ui youtube button">
+              <i class="youtube icon"></i>
+              YouTube
+            </button>
+          </div>
+          <!--<div class="column">-->
+          <!--  <h3>"I shouldn't have gone with their competitor."</h3>-->
+          <!--  <p>-->
+          <!--    <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys-->
+          <!--  </p>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+    
+    <div class="ui vertical stripe center aligned segment">
+      <div class="ui text container">
+        <h3 class="ui header">Хотите поддержать проект?</h3>
+        <p>Нам очень приятно, что вы не остаётесь в стороне и активно участвуете в жизни сообщества. Все пожертвования будут направлены на дальнейшее развитие нашего движения.</p>
+        <a class="ui large button">Поддержать проект</a>
+      </div>
+    </div>
+    
+    <!--FOOTER-->
+    <% include ../partials/footer %>
+    <!--FOOTER END-->
+    
+    </div>
+    <domflags id="domflags-root"></domflags>
+</body>
+</html>

@@ -15,13 +15,17 @@ For working with Garbage Collector use this flags:
 
 // ROUTES
 const index = require('./routes/index'),
-      about = require('./routes/about');
+      about = require('./routes/about'),
+      cooperation = require('./routes/cooperation'),
+      events = require('./routes/events'),
+      reports = require('./routes/reports');
 
 const app = express();
 
   // view engine setup
-  app.set('views', path.join(__dirname, 'views'));
-  app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'views/pages'));
+  
+  app.set('view engine', 'ejs'); // TODO: сюда надо засунуть vue или что-то такое... хз что))
 
   //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
   app.use(logger('dev'));
@@ -36,6 +40,9 @@ const app = express();
   // app.use ROUTES
   app.use('/', index);
   app.use('/about', about);
+  app.use('/cooperation', cooperation);
+  app.use('/events', events);
+  app.use('/reports', reports);
 
   // Use sessionStore for saving client session
   // const sessionStore = require('./libs/sessionStore');

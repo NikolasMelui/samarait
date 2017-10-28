@@ -1,9 +1,9 @@
 let express = require('express'),
     router = express.Router();
 
-/* GET home page. */
+/* GET about page. */
 router.get('/', (req, res, next) => {
-  res.render('about', { title: 'Samara IT Community - About' });
+  res.render('events', { title: 'Samara IT Community - Events' });
 });
 
 module.exports = router;
