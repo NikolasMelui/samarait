@@ -1,5 +1,3 @@
-<!-- views/pages/cooperation.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script> <!--TODO: ну это пздц)) -->
@@ -17,23 +15,14 @@
       <% include ../partials/header %>
       
       <!--MAIN_BLACK_BLOCK-->
-      <div class="ui text container">
-        <h1 class="ui inverted header">
-         Раздел находится в разработке...
-        </h1>
-        <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
-      </div>
+      <% include ../partials/develop %>
     
     </div>
     <!--BLACK_BLOCK END--> 
     
-    <div class="ui vertical stripe center aligned segment">
-      <div class="ui text container">
-        <h3 class="ui header">Хотите поддержать проект?</h3>
-        <p>Нам очень приятно, что вы не остаётесь в стороне и активно участвуете в жизни сообщества. Все пожертвования будут направлены на дальнейшее развитие нашего движения.</p>
-        <a class="ui large button">Поддержать проект</a>
-      </div>
-    </div>
+    <!--DONATION_BLOCK-->
+    <% include ../partials/donation %>
+    <!--DONATION_BLOCK END-->
     
     <!--FOOTER-->
     <% include ../partials/footer %>
